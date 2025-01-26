@@ -16,7 +16,7 @@ jobs:
       - name: Build Docker Image
         run: docker build -t shashikanthp/reactjs-app .
       - name: Publish image to docker hub
-        run: docker push shashikanthp/reactjs-app:latest
+        run: docker pull shashikanthp/reactjs-app:latest
 
   deploy:
     needs: build
