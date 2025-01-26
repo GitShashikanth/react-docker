@@ -1,11 +1,31 @@
-# Use Nginx as the base image to serve the React app
+# Stage 1: Build the React app
+# Use an official Node.js runtime as a parent image
+FROM node:18-slim AS build
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Install dependencies
+# Copy package.json and package-lock.json to leverage Docker cache
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install --legacy-peer-deps
+
+# Copy the rest of the application files
+COPY . ./
+
+# Build the React app
+RUN npm run build
+
+# Stage 2: Serve the app using Nginx (for production)
 FROM nginx:alpine
 
-# Copy the build output to the Nginx web server directory
-COPY build /usr/share/nginx/html
+# Copy the built app from the previous build stage to Nginx
+COPY --from=build /app/build /usr/share/nginx/html
 
-# Expose port 80 to allow access
+# Expose port 80 for the Nginx web server
 EXPOSE 80
 
-# Start Nginx
+# Set the default command to run Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
