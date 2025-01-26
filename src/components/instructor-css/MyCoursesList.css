@@ -1,0 +1,42 @@
+.my-courses-list {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.my-courses-list h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.courses-list {
+  list-style: none;
+  padding: 0;
+}
+
+.course-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.course-item h4 {
+  font-size: 18px;
+  margin: 0 0 5px;
+  color: #333;
+}
+
+.course-item p {
+  margin: 0;
+  color: #555;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}

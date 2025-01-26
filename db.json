@@ -1,0 +1,37 @@
+{
+  "instructors": [
+    {
+      "id": "1",
+      "name": "Instructor One",
+      "email": "instructor1@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Instructor Two",
+      "email": "instructor2@example.com"
+    }
+  ],
+  "publishedCourses": [
+    {
+      "id": 1,
+      "title": "React for Beginners",
+      "description": "Learn the basics of React.",
+      "instructorId": 101,
+      "published": true
+    },
+    {
+      "id": 2,
+      "title": "Advanced Java",
+      "description": "Master Java for backend development.",
+      "instructorId": 102,
+      "published": true
+    },
+    {
+      "id": 3,
+      "title": "CSS Tricks and Tips",
+      "description": "Learn advanced CSS techniques.",
+      "instructorId": 101,
+      "published": true
+    }
+  ]
+}
